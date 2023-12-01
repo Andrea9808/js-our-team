@@ -76,14 +76,22 @@ for(let i = 0; i< arrayTeam.length; i++){
    //creo una classe per poter andare a modificare il css
     teamMembri.classList.add("card");
 
+     // creo l'elemento immagine per ogni membro
+     let imgElement = document.createElement("img");
+
+     //inserisco le img
+     imgElement.src = "../img/" + imgTeamIesimo;
+
     //inserisco i membri nel DOM
     teamMembri.innerHTML = 
    `<p>Nome: ${nomeTeamIesimo}</p>
-    <p>Ruolo: ${ruoloTeamIesimo}</p>
-    <p>img : ${imgTeamIesimo}</p>`;
+    <p>Ruolo: ${ruoloTeamIesimo}</p>`;
 
-   //li appendo nel contenitore (teamElement) dichiarato all'inizio
-    teamElement.appendChild(teamMembri);
+    //appendo le img
+    teamMembri.append(imgElement);
+
+    //li appendo nel contenitore (teamElement) dichiarato all'inizio
+    teamElement.append(teamMembri);
 
 
 }
